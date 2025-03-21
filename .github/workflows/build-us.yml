@@ -1,4 +1,4 @@
-name: SonarQube Cloud
+name: SonarQube Cloud US
 on:
   push:
     branches:
@@ -43,6 +43,6 @@ jobs:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN_US }}
         shell: powershell
         run: |
-          .\.sonar\scanner\dotnet-sonarscanner begin /k:"denis-troller_RegexAttributeTest" /o:"denis-troller" /d:sonar.token="${{ secrets.SONAR_TOKEN_US }}" /d:sonar.region="US" 
+          .\.sonar\scanner\dotnet-sonarscanner begin /k:"denis-troller_RegexAttributeTest" /o:"denis-troller" /d:sonar.token="${{ secrets.SONAR_TOKEN_US }}" /d:sonar.region="US" /d:sonar.host.url="https://sonarcloud.io"
           dotnet build
           .\.sonar\scanner\dotnet-sonarscanner end /d:sonar.token="${{ secrets.SONAR_TOKEN_US }}"
