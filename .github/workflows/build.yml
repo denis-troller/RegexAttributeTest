@@ -34,7 +34,9 @@ jobs:
       - name: Install SonarQube Cloud scanner        
         shell: powershell
         run: |
-          New-Item -Path .\.sonar\scanner -ItemType Directory
+          if(!(Test-Path -Path .\.sonar\scanner )){
+            New-Item -Path .\.sonar\scanner -ItemType Directory
+          }          
           dotnet tool update dotnet-sonarscanner --tool-path .\.sonar\scanner
       - name: Build and analyze
         env:
