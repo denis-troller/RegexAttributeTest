@@ -1,4 +1,4 @@
-name: SonarQube Cloud
+name: SonarQube Cloud EU Region
 on:
   push:
     branches:
