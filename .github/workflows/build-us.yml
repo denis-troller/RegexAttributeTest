@@ -1,4 +1,4 @@
-name: SonarQube Cloud US
+name: SonarQube Cloud US Region
 on:
   workflow_dispatch :
   push:
